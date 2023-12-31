@@ -57,32 +57,46 @@
         <!------------------- registration form -------------------------->
         <div class="login-container" id="login">
             <div class="top">
-                <span><a href="{{route('login')}}" >Login</a>هل تمتلك حساب ؟</span>
+                <span>
+                    <a href="{{route('login')}}" >Login</a>هل تمتلك حساب ؟
+                </span>
                 <header>Sign Up</header>
             </div>
-            <div class="two-forms">
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="رقم الهاتف">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="الاسم">
-                    <i class="bx bx-user"></i>
-                </div>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="البريد الالكتروني">
-                <i class="bx bx-envelope"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="كلمة المرور">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <a href="home.html">
-                    <input type="submit" class="submit" value="تسجيل">
-                </a>
-            </div>
+            <form method="post" action="{{ route('register') }}">
+                @csrf
+                    <div class="two-forms">
+                        <div class="input-box">
+                            <input type="number" id="phone" name="phone" required maxlength="50" class="input-field" placeholder="رقم الهاتف" :value="old('phone')">
+                            <i class="fa-solid fa-phone"></i>
+                            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+                        </div>
+
+                        <div class="input-box">
+                            <input type="text" id="name" name="name" required maxlength="50" class="input-field" placeholder=" الاسم " :value="old('name')" autofocus autocomplete="name">
+                            <i class="bx bx-user"></i>
+                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        {{-- <input type="text" class="input-field" placeholder="البريد الالكتروني"> --}}
+                        <input type="email" id="email" name="email" class="input-field" placeholder="البريد الالكتروني" required maxlength="50" :value="old('email')">
+                        <i class="bx bx-envelope"></i>
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" id="password" name="password" class="input-field" placeholder="كلمة المرور"  required autocomplete="new-password">
+                        <i class="bx bx-lock-alt"></i>
+                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                    </div>
+
+                    <div class="input-box">
+                        <a>
+                            <input type="submit" name="login" class="submit" value="تسجيل">
+                        </a>
+                    </div>
+            </form>
         </div>
     </div>
 

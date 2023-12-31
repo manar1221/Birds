@@ -56,23 +56,32 @@
 
         <div class="login-container" id="login">
             <div class="top">
-                <span><a href="{{route('register')}}" > Sign Up </a><span> '</span> انشاء حساب ؟</span>
+                <span>
+                    <a href="{{route('register')}}" > Sign Up </a>
+                    <span> '</span> انشاء حساب ؟</span>
                 <header>Login</header>
             </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="البريد الالكتروني">
-                <i class="bx bx-user"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="كلمة المرور">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <a href="home.html">
-                    <input type="submit" class="submit" value="تسجيل الدخول" >
-                </a>
 
-            </div>
+            <form action="{{ route('login') }}" method="post" action="{{route('login')}}" enctype="multipart/form-data">
+            @csrf
+                <div class="input-box">
+                    <input type="email" name="email" class="input-field" placeholder="البريد الالكتروني"  required maxlength="50" class="cbox" :value="old('email')" autofocus>
+                    <i class="bx bx-user"></i>
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                </div>
+
+                <div class="input-box">
+                    <input type="password" name="password"  class="input-field" placeholder="كلمة المرور" required maxlength="20" class="cbox" autocomplete="current-password">
+                    <i class="bx bx-lock-alt"></i>
+                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                </div>
+
+                <div class="input-box">
+                    <a>
+                        <input type="submit" name="login" class="submit" value="تسجيل الدخول" >
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </x-app-layout>
