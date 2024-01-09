@@ -3,6 +3,11 @@
 
     {{-- <p>-----</p> --}}
     <a href="{{route('admin.product.add')}}" class="add-category-btn pt-5 mt-5">اضافة منتج جديد</a>
+
+    @if (Session::has('message'))
+        <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+    @endif
+
     <table>
       <thead>
         <tr>

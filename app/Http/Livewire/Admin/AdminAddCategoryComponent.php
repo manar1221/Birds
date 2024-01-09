@@ -34,7 +34,7 @@ class AdminAddCategoryComponent extends Component
         $this->image->storeAs('categories',$imageName);
         $category->image = $imageName;
         $category->save();
-        session()->flash('message','Category has been created successfully!');
+        session()->flash('message',' تم اضافة الفئة بنجاح ');
         return redirect()->route('admin.categories');
     }
 

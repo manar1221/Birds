@@ -19,7 +19,7 @@
                                                     <div class="box_main">
                                                         <h4 class="shirt_text">{{ $product->name }}</h4>
                                                         <p class="price_text">السعر <span style="color: #262626;">{{ $product->price }}</span></p>
-                                                        <div class="jewellery_img"><img src="{{ asset('images') }}/{{ $product->image }}"></div>
+                                                        <div class="jewellery_img"><img src="{{ asset('images/products') }}/{{ $product->image }}"></div>
                                                         <div class="btn_main">
                                                             <div class="">{{ $product->description }}</div>
                                                             <div class="seemore_bt"><a href="{{route('product.details',['id'=>$product->id])}}">المزيد</a></div>

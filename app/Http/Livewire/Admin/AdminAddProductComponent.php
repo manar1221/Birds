@@ -41,7 +41,7 @@ class AdminAddProductComponent extends Component
 
         $product->category_id =$this->category_id ;
         $product->save();
-        session()->flash('message','Product has been added!');
+        session()->flash('message',' تم اضافة المنتج بنجاح ');
         return redirect()->route('shop');
     }
 

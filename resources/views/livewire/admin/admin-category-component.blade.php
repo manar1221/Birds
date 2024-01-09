@@ -24,7 +24,7 @@
         @foreach ($categories as $category)
             <tr>
               <td>{{ $category->name }}</td>
-              <td><img src="{{ asset('images')}}/{{$category->image}}" alt="{{ $category->name }}"></td>
+              <td><img src="{{ asset('images/categories')}}/{{$category->image}}" alt="{{ $category->name }}"></td>
               <td>{{ $category->created_at }}</td>
               <td>
                   <a href="#" onclick="" class="text-danger"> حذف </a> /
