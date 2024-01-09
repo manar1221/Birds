@@ -29,7 +29,7 @@
             <tr>
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
-            <td><img src="{{ asset('images')}}/{{$product->image}}" alt="{{ $product->name }}"></td>
+            <td><img src="{{ asset('images/products')}}/{{$product->image}}" alt="{{ $product->name }}"></td>
             <td>{{ $product->quantity }}</td>
             <td>{{ $product->category->name }}</td>
             <td>{{ $product->phone }}</td>

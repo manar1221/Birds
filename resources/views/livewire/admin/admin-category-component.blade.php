@@ -28,7 +28,7 @@
               <td>{{ $category->created_at }}</td>
               <td>
                   <a href="#" onclick="" class="text-danger"> حذف </a> /
-                  <a href="#" class="text-info"> تعديل </a>
+                  <a href="{{ route('admin.category.edit',['category_id'=>$category->id]) }}" class="text-info"> تعديل </a>
               </td>
             </tr>
         @endforeach
