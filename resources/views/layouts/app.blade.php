@@ -6,9 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-
 
       <meta name="keywords" content="">
       <meta name="description" content="">
@@ -18,12 +16,18 @@
 
       <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
+      <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+
+      <link rel="stylesheet" href="{{asset('css/fontawesome.css')}}">
+
       <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 
       <link rel="icon" type="image/x-icon" href="{{asset('images/760921.png')}}">
-    <title>حمام | الصفحة الرئيسية</title>
+    <title> العشة </title>
 
       <link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.min.css')}}">
+
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
@@ -49,9 +53,9 @@
                             <ul>
                                 <li><a href="/">الرئيسية</a></li>
                                 <li><a href="{{route('shop')}}">المتجر</a></li>
-                                <li><a href="addproduct.html">اضف حيوانك</a></li>
-                                <li><a href="montagat.html" class="link">المنتجات</a></li>
-                                <li><a href="Admin.html" class="link">حسابي</a></li>
+                                <li><a href="{{route('admin.product.add')}}">اضف حيوانك</a></li>
+                                <li><a href="{{ROUTE('admin.categories')}}" class="link">الفئات</a></li>
+                                <li><a href="{{route('admin.products')}}" class="link">حسابي</a></li>
                                 <li><a href="#here">التواصل</a></li>
 
                                 <li><a href="#here">
@@ -89,8 +93,8 @@
                      <a href="/">الرئيسية</a>
                      <a href="{{route('shop')}}">المتجر</a>
                      <a href="addproduct.html">اضاف حيوانك</a>
-                     <a href="montagat.html" class="link">المنتجات</a>
-                     <a href="Admin.html" class="link">حسابي</a>
+                     <a href="{{ROUTE('admin.categories')}}" class="link">الفئات</a>
+                     <a href="{{route('admin.products')}}" class="link">حسابي</a>
                      <a href="#here">التواصل</a>
                   </div>
                   <span class="toggle_icon" onclick="openNav()"><img src="{{asset('images/toggle-icon.png')}}"></span>
@@ -115,7 +119,7 @@
          </div>
          <!-- header section end -->
          <!-- banner section start -->
-         <div class="banner_section layout_padding">
+         <div class="banner_section layout_padding pb-3 pt-0">
             <div class="container">
                <div id="my_slider" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">

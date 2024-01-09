@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Livewire\Admin\AdminAddCategoryComponent;
+use App\Http\Livewire\Admin\AdminAddProductComponent;
+use App\Http\Livewire\Admin\AdminCategoryComponent;
+use App\Http\Livewire\Admin\AdminProductComponent;
+use App\Http\Livewire\CategoryComponent;
+use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\ShopComponent;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +37,27 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/',HomeComponent::class)->name('home.index');
+
     Route::get('/shop',ShopComponent::class)->name('shop');
+
+    Route::get('/admin/product/add',AdminAddProductComponent::class)->name('admin.product.add');
+
+    Route::get('/admin/products',AdminProductComponent::class)->name('admin.products');
+
+    Route::get('/admin/categories',AdminCategoryComponent::class)->name('admin.categories');
+
+    Route::get('/product/{id}',DetailsComponent::class)->name('product.details');
+
+    Route::get('/admin/category/add',AdminAddCategoryComponent::class)->name('admin.category.add');
+
+    Route::get('/product-category/{id}',CategoryComponent::class)->name('product.category');
 });
+
+Route::middleware(['auth','authadmin'])->group(function () {
+
+});
+
+
 
 require __DIR__.'/auth.php';
 

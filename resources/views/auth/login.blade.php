@@ -50,7 +50,7 @@
 </x-guest-layout> --}}
 
 <x-app-layout>
-    <div class="form-box">
+    <div class="form-box w-100" style="background-color: #d39ec2;">
 
         <!------------------- login form -------------------------->
 
@@ -62,7 +62,7 @@
                 <header>Login</header>
             </div>
 
-            <form action="{{ route('login') }}" method="post" action="{{route('login')}}" enctype="multipart/form-data">
+            <form action="{{ route('login') }}" method="post" action="{{route('login')}}" enctype="multipart/form-data" >
             @csrf
                 <div class="input-box">
                     <input type="email" name="email" class="input-field" placeholder="البريد الالكتروني"  required maxlength="50" class="cbox" :value="old('email')" autofocus>

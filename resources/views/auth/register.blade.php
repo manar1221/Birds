@@ -53,16 +53,16 @@
 
 <x-app-layout>
 
-    <div class="form-box">
+    <div class="form-box w-100 row justify-content-center" style="background-color: #d39ec2;">
         <!------------------- registration form -------------------------->
-        <div class="login-container" id="login">
+        <div class="login-container col-md-6" id="login">
             <div class="top">
                 <span>
                     <a href="{{route('login')}}" >Login</a>هل تمتلك حساب ؟
                 </span>
                 <header>Sign Up</header>
             </div>
-            <form method="post" action="{{ route('register') }}">
+            <form method="post" action="{{ route('register') }}" class="form-group">
                 @csrf
                     <div class="two-forms">
                         <div class="input-box">
