@@ -2,7 +2,7 @@
     @if (Session::has('message'))
         <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
     @endif
-    <form id="consultation-form" class="feed-form pt-2 pb-5" wire:submit.prevent="storeCategory">
+    <form id="consultation-form" class="feed-form pt-2 pb-5" wire:submit.prevent="updateCategory">
         <label for="quantity"> الاسم </label>
         <input type="text" id="name" name="name" required maxlength="50" class="input-field" placeholder=" اسم حيوانك " wire:model="name">
 
@@ -14,6 +14,6 @@
             <img src="{{asset('images/categories')}}/{{$image}}" width="120">
         @endif
 
-        <button class="button_submit">اضف الفئة</button>
+        <button class="button_submit mt-4"> تعديل </button>
     </form>
 </section>

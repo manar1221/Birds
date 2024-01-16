@@ -53,13 +53,14 @@
     <div class="form-box w-100" style="background-color: #d39ec2;">
 
         <!------------------- login form -------------------------->
-
+                 
         <div class="login-container" id="login">
             <div class="top">
                 <span>
                     <a href="{{route('register')}}" > Sign Up </a>
                     <span> '</span> انشاء حساب ؟</span>
                 <header>Login</header>
+                
             </div>
 
             <form action="{{ route('login') }}" method="post" action="{{route('login')}}" enctype="multipart/form-data" >

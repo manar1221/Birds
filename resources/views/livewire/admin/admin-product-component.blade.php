@@ -35,8 +35,8 @@
             <td>{{ $product->phone }}</td>
             <td>{{ $product->created_at }}</td>
             <td>
-                <a href="#" onclick="" class="text-danger"> حذف </a>
-                <a href="#" class="text-info"> تعديل </a>
+                <a href="#" onclick="deleteConfirmation({{ $product->id }})" class="text-danger"> حذف </a>
+                <a href="{{ route('admin.product.edit',['product_id'=>$product->id])}}" class="text-info"> تعديل </a>
             </td>
             </tr>
         @endforeach
@@ -46,3 +46,36 @@
     {{ $products->links() }}
 
  </section>
+
+
+ <div class="modal" id="deleteConfirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body pb-30 pt-30">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h4 class="pb-3"> تأكيد عملية الحذف </h4>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteConfirmation"> الغاء </button>
+                        <button type="button" class="btn btn-danger" onclick="deleteProduct()"> حذف </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@push('scripts')
+    <script>
+        function deleteConfirmation(id)
+        {
+            @this.set('product_id',id);
+            $('#deleteConfirmation').modal('show');
+        }
+
+        function deleteProduct()
+        {
+           @this.call('deleteProduct');
+           $('#deleteConfirmation').modal('hide');
+        }
+    </script>
+@endpush

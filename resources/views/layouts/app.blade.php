@@ -53,15 +53,25 @@
                             <ul>
                                 <li><a href="/">الرئيسية</a></li>
                                 <li><a href="{{route('shop')}}">المتجر</a></li>
-                                <li><a href="{{route('admin.product.add')}}">اضف حيوانك</a></li>
-                                <li><a href="{{ROUTE('admin.categories')}}" class="link">الفئات</a></li>
-                                <li><a href="{{route('admin.products')}}" class="link">حسابي</a></li>
+                                <li><a href="{{ROUTE('admin.categories')}}" class="link"></a></li>
+
+                                <li>
+                                 <div class="paste-button">
+                                    <a href="#" class="button">حسابي &nbsp; ▼</a>
+                                    <div class="dropdown-content">
+                                      <a id="top"  href="{{route('admin.products')}}"> منتجات </a>
+                                      <a id="middle" href="{{route('admin.categories')}}"> فئات </a>
+                                      <a id="bottom" href="#"> اخبار </a>
+
+                                    </div>
+                                  </div>
+                              </li>
                                 <li><a href="#here">التواصل</a></li>
 
                                 <li><a href="#here">
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf
-                                        <a href="{{route('logout')}}" onclick="event.preventDefault(); this.closest('form').submit();" class="coption-btn text-decoration-none">logout</a>
+                                        <a href="{{route('logout')}}" onclick="event.preventDefault(); this.closest('form').submit();" class="coption-btn text-decoration-none"> تسجيل الخروج </a>
                                     </form>
                                 </a></li>
 
@@ -127,7 +137,7 @@
                         <div class="row">
                            <div class="col-sm-12">
                               <h1 class="banner_taital">تسوق هنا <br>كل ما تحتاجه من طيور</h1>
-                              <div class="buynow_bt"><a href="#main_slider">تسوق</a></div>
+                              <div class="buynow_bt"><a href="{{route('shop')}}">تسوق</a></div>
                            </div>
                         </div>
                      </div>
@@ -135,7 +145,7 @@
                         <div class="row">
                            <div class="col-sm-12">
                               <h1 class="banner_taital">تسوق هنا <br>جميع انواع الحيوانات</h1>
-                              <div class="buynow_bt"><a href="#main_slider">تسوق</a></div>
+                              <div class="buynow_bt"><a href="{{route('shop')}}">تسوق</a></div>
                            </div>
                         </div>
                      </div>
@@ -143,7 +153,7 @@
                         <div class="row">
                            <div class="col-sm-12">
                               <h1 class="banner_taital">تسوق هنا <br>موقعك المفضل من هذا النوع</h1>
-                              <div class="buynow_bt"><a href="#main_slider">تسوق</a></div>
+                              <div class="buynow_bt"><a href="{{route('shop')}}">تسوق</a></div>
                            </div>
                         </div>
                      </div>
@@ -199,6 +209,7 @@
       <!-- sidebar -->
       <script src="{{asset('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
       <script src="{{asset('js/custom.js')}}"></script>
+      <script src="{{ asset('js/main.js') }}"></script>
       <script>
          function openNav() {
            document.getElementById("mySidenav").style.width = "250px";
@@ -208,6 +219,27 @@
            document.getElementById("mySidenav").style.width = "0";
          }
       </script>
+          <script src="{{ asset('js/vendor/modernizr-3.6.0.min.js') }}"></script>
+          <script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
+          <script src="{{ asset('js/vendor/jquery-migrate-3.3.0.min.js') }}"></script>
+          <script src="{{ asset('js/vendor/bootstrap.bundle.min.js') }}"></script>
+          <script src="{{ asset('js/plugins/slick.js') }}"></script>
+          <script src="{{ asset('js/plugins/jquery.syotimer.min.js') }}"></script>
+          <script src="{{ asset('js/plugins/wow.js') }}"></script>
+          <script src="{{ asset('js/plugins/jquery-ui.js') }}"></script>
+          <script src="{{ asset('js/plugins/perfect-scrollbar.js') }}"></script>
+          <script src="{{ asset('js/plugins/magnific-popup.js') }}"></script>
+          <script src="{{ asset('js/plugins/select2.min.js') }}"></script>
+          <script src="{{ asset('js/plugins/waypoints.js') }}"></script>
+          <script src="{{ asset('js/plugins/counterup.js') }}"></script>
+          <script src="{{ asset('js/plugins/jquery.countdown.min.js') }}"></script>
+          <script src="{{ asset('js/plugins/images-loaded.js') }}"></script>
+          <script src="{{ asset('js/plugins/isotope.js') }}"></script>
+          <script src="{{ asset('js/plugins/scrollup.js') }}"></script>
+          <script src="{{ asset('js/plugins/jquery.vticker-min.js') }}"></script>
+          <script src="{{ asset('js/plugins/jquery.theia.sticky.js') }}"></script>
+          <script src="{{ asset('js/plugins/jquery.elevatezoom.js') }}"></script>
       @livewireScripts
+      @stack('scripts')
    </body>
 </html>

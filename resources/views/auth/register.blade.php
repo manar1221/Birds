@@ -53,9 +53,9 @@
 
 <x-app-layout>
 
-    <div class="form-box w-100 row justify-content-center" style="background-color: #d39ec2;">
+    <div class="form-box w-100 " style="background-color: #d39ec2;">
         <!------------------- registration form -------------------------->
-        <div class="login-container col-md-6" id="login">
+        <div class=".register-container col-md-6" id="login">
             <div class="top">
                 <span>
                     <a href="{{route('login')}}" >Login</a>هل تمتلك حساب ؟

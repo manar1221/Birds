@@ -10,7 +10,7 @@
                     @foreach ($chunkedProducts as $key => $chunk)
                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                             <div class="container">
-                                <h1 class="fashion_taital">الحيوانات</h1>
+                                <h1 class="fashion_taital"> المتجر </h1>
                                 <div class="row">
                                     <div class="fashion_section_2 col-9">
                                         <div class="row">
